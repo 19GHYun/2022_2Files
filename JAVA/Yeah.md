@@ -29,7 +29,84 @@ import java.util.Scanner;
 		
 		public void print() {
 			System.out.println(id + ": " + name + " [" + price + "]");
-		}
+		}package testest;
+import java.util.*;
+
+public class test
+{
+    public static int[][] makeArray(Scanner s) {
+        //출력 결과를 참고하여 사용자로부터 정방형 배열 크기("array size? ")를 입력받고 배열을 생성한다. 
+    	int p = 0;
+    	System.out.print("array size? ");
+    	int a = s.nextInt();
+    	int i [][] = new int[a][];
+    	for(int k = 0 ; k <a ; k++) {
+    		i[k] = new int[a-k];
+    	}
+    	
+    	for(int j = 0 ; j < a ; j++) {
+    		p = j;
+    		for(int k = 0 ; k < i[j].length ; k++) {
+    			i[j][k] = p;
+    			p++;
+    		}
+    	}
+    	/*for(int j = 0 ; j < a ; j++) {
+    		for(int k = 0 ; k < a ; k++) {
+    			//i[j][k] = p;
+    			//p++;
+    			if( j + k +1 >= a ) {
+    				i[j][k] = p;
+    				p++;
+    			}
+    			else
+    				i[j][k] = 0;
+    		}
+    	}
+    	*/
+    	return i;
+        //필요한 배열의 원소들을 적절히 초기화한 후 배열을 리턴한다. 
+        //(초기화하지 않은 배열 원소는 0으로 자동 설정된다.)
+    }
+
+    public static void printArray(int arr[][]) {
+        //출력 결과를 참고하여 2차원 배열 arr[][]의 모든 원소들을 출력한다.
+    	for(int i = 0 ; i < arr.length; i++ ) {
+    		System.out.print("arr[" + i + "] ");
+    		for(int k = 0; k < arr[i].length; k++) {
+    			System.out.print(arr[i][k] + " ");
+    		}
+    		System.out.println();
+    	}
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int arr[][];
+        
+        while(true){
+        { // 아래 과정을 계속 반복 수행한다.
+            arr = makeArray(scanner);
+            printArray(arr);
+            System.out.print("continue? ");
+            //문자열 단어 하나를 입력 받음
+            String abc = scanner.next();
+            System.out.println();
+            //입력된 단어가 "yes"이면 계 close.scanner();속 반복 수행하고 "yes"가 아니면 여기서 반복을 중단한다.
+            if(abc.equals("yes")) {
+            	continue;
+            }
+            else
+            	break;
+        }
+        }
+ 
+        //스캐너 객체 닫기;
+        scanner.close();
+        System.out.println("Done.");
+    }
+}
+
 		
 		
 	}
@@ -262,6 +339,90 @@ public class test
     		}
     	}
     	
+    	return i;
+        //필요한 배열의 원소들을 적절히 초기화한 후 배열을 리턴한다. 
+        //(초기화하지 않은 배열 원소는 0으로 자동 설정된다.)
+    }
+
+    public static void printArray(int arr[][]) {
+        //출력 결과를 참고하여 2차원 배열 arr[][]의 모든 원소들을 출력한다.
+    	for(int i = 0 ; i < arr.length; i++ ) {
+    		System.out.print("arr[" + i + "] ");
+    		for(int k = 0; k < arr[i].length; k++) {
+    			System.out.print(arr[i][k] + " ");
+    		}
+    		System.out.println();
+    	}
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int arr[][];
+        
+        while(true){
+        { // 아래 과정을 계속 반복 수행한다.
+            arr = makeArray(scanner);
+            printArray(arr);
+            System.out.print("continue? ");
+            //문자열 단어 하나를 입력 받음
+            String abc = scanner.next();
+            System.out.println();
+            //입력된 단어가 "yes"이면 계 close.scanner();속 반복 수행하고 "yes"가 아니면 여기서 반복을 중단한다.
+            if(abc.equals("yes")) {
+            	continue;
+            }
+            else
+            	break;
+        }
+        }
+ 
+        //스캐너 객체 닫기;
+        scanner.close();
+        System.out.println("Done.");
+    }
+}
+
+
+```
+
+### 3-2 연습
+
+```
+package testest;
+import java.util.*;
+
+public class test
+{
+    public static int[][] makeArray(Scanner s) {
+        //출력 결과를 참고하여 사용자로부터 정방형 배열 크기("array size? ")를 입력받고 배열을 생성한다. 
+    	int p = 0;
+    	System.out.print("array size? ");
+    	int a = s.nextInt();
+    	int i [][] = new int[a][];
+    	for(int k = 0 ; k <a ; k++) {
+    		i[k] = new int[a-k];
+    	}
+    	
+    	for(int j = 0 ; j < a ; j++) {
+    		p = j;
+    		for(int k = 0 ; k < i[j].length ; k++) {
+    			i[j][k] = p;
+    			p++;
+    		}
+    	}
+    	/*for(int j = 0 ; j < a ; j++) {
+    		for(int k = 0 ; k < a ; k++) {
+    			//i[j][k] = p;
+    			//p++;
+    			if( j + k +1 >= a ) {
+    				i[j][k] = p;
+    				p++;
+    			}
+    			else
+    				i[j][k] = 0;
+    		}
+    	}
+    	*/
     	return i;
         //필요한 배열의 원소들을 적절히 초기화한 후 배열을 리턴한다. 
         //(초기화하지 않은 배열 원소는 0으로 자동 설정된다.)
